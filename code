@@ -222,8 +222,6 @@ void update()
 }
 int main()
 {
-    int HINDI = 1234;
-    int ENGLISH = 1235;
     int value;
     while (true)
     {
