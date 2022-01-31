@@ -1,0 +1,278 @@
+#include <iostream>
+using namespace std;
+string n[20], l[10], c[20], p[10];
+int b[20];
+int total = 0;
+void enter()
+{
+    int m;
+    cout << " How much student do you want to enter : ";
+    cin >> m;
+    if (total == 0)
+    {
+        total = total + m;
+        for (int i = 0; i < m; i++)
+        {
+            cout << "Enter the name of the student " << i + 1 << endl;
+            cin >> n[i];
+            cout << "Enter 9 digit library id of the student " << endl;
+            cin >> l[i];
+            cout << "Enter the course of the student " << endl;
+            cin >> c[i];
+            cout << "Enter the contact no of the student " << i + 1 << endl;
+            cin >> p[i];
+            cout << "Enter the no of books issued by the student " << i + 1 << endl;
+            cin >> b[i];
+            cout << endl;
+            int am = b[i];
+            cout << "THE BARCODES ARE LISTED HERE" << endl
+                 << endl;
+            cout << "HINDI = 301" << endl
+                 << "ENGLISH = 302" << endl
+                 << "SCIENCE = 303" << endl
+                 << "MATH = 304" << endl
+                 << "SST = 305" << endl
+                 << "PHYSICAL EDUCATION = 306" << endl;
+            cout << endl;
+            for (int i = 0; i < am; i++)
+            {
+                int ab[100];
+                cout << "Enter the barcode of the book " << i + 1 << " from the listed ones" << endl
+                     << endl;
+                cin >> ab[i];
+                cout << endl;
+                switch (ab[i])
+                {
+                case 301:
+                    cout << "Student issued : HINDI" << endl;
+
+                    break;
+                case 302:
+                    cout << "Student issued : ENGLISH" << endl;
+
+                    break;
+                case 303:
+                    cout << "Student issued : SCIENCE" << endl;
+
+                    break;
+                case 304:
+                    cout << "Student issued : MATH" << endl;
+
+                    break;
+                case 305:
+                    cout << "Student issued : SST" << endl;
+
+                    break;
+                case 306:
+                    cout << "Student issued : PHYSICAL EDUCATION" << endl;
+                    break;
+                default:
+                    cout << "WRONG BARCODE" << endl;
+                }
+                cout << endl;
+                cout << "--------------------------------------------------------------------------------------------------------" << endl;
+                cout << "--------------------------------------------------------------------------------------------------------" << endl;
+            }
+        }
+    }
+    else
+    {
+        for (int i = total; i < total + m; i++)
+        {
+            cout << "Enter the name of the student " << i + 1 << endl;
+            cin >> n[i];
+            cout << "Enter the 9 digit library id of the student " << endl;
+            cin >> l[i];
+            cout << "Enter the course of the student " << endl;
+            cin >> c[i];
+            cout << "Enter the contact no of the student " << i + 1 << endl;
+            cin >> p[i];
+            cout << "Enter the no of books issued by the student " << i + 1 << endl;
+            cin >> b[i];
+            cout << endl;
+            int am = b[i];
+            cout << "THE BARCODES ARE LISTED HERE" << endl
+                 << endl;
+            cout << "HINDI = 301" << endl
+                 << "ENGLISH = 302" << endl
+                 << "SCIENCE = 303" << endl
+                 << "MATH = 304" << endl
+                 << "SST = 305" << endl
+                 << "PHYSICAL EDUCATION = 306" << endl;
+            cout << endl;
+            for (int i = 0; i < am; i++)
+            {
+                int barcode;
+                int ab[100];
+                cout << "Enter the barcode of the book " << i + 1 << " from the listed ones" << endl
+                     << endl;
+                cin >> ab[i];
+                cout << endl;
+
+                switch (ab[i])
+                {
+                case 301:
+                    cout << "Student issued : HINDI" << endl;
+                    break;
+                case 302:
+                    cout << "Student issued : ENGLISH" << endl;
+                    break;
+                case 303:
+                    cout << "Student issued : SCIENCE" << endl;
+                    break;
+                case 304:
+                    cout << "Student issued : MATH" << endl;
+                    break;
+                case 305:
+                    cout << "Student issued : SST" << endl;
+                    break;
+                case 306:
+                    cout << "Student issued : PHYSICAL EDUCATION" << endl;
+                    break;
+                default:
+                    cout << "WRONG BARCODE" << endl;
+                }
+                cout << endl;
+                cout << "--------------------------------------------------------------------------------------------------------" << endl;
+                cout << "--------------------------------------------------------------------------------------------------------" << endl;
+            }
+        }
+        total = total + m;
+    }
+}
+void show()
+{
+    for (int i = 0; i < total; i++)
+    {
+        cout << "Name of the student " << i + 1 << " :" << endl;
+        cout << n[i] << endl;
+        cout << "9 digit library id of the student : " << endl;
+        cout << l[i] << endl;
+        cout << "Course of the student : " << endl;
+        cout << c[i] << endl;
+        cout << "Contact no of the student : " << i + 1 << endl;
+        cout << p[i] << endl;
+        cout << "No of books issued by the student : " << i + 1 << endl;
+        cout << b[i] << endl;
+        cout << endl;
+        cout << "--------------------------------------------------------------------------------------------------------" << endl;
+        cout << "--------------------------------------------------------------------------------------------------------" << endl;
+    }
+}
+void search()
+{
+    string lib;
+    cout << "Enter the 9 digit library id of the student" << endl;
+    cin >> lib;
+    for (int i = 0; i < total; i++)
+    {
+        if (lib == l[i])
+        {
+
+            cout << "Name of the student " << i + 1 << " :" << endl;
+            cout << n[i] << endl;
+            cout << "9 digit library id of the student : " << endl;
+            cout << l[i] << endl;
+            cout << "Course of the student : " << endl;
+            cout << c[i] << endl;
+            cout << "Contact no of the student : " << i + 1 << endl;
+            cout << p[i] << endl;
+            cout << "No of books issued by the student : " << i + 1 << endl;
+            cout << b[i] << endl;
+            cout << endl;
+            cout << "--------------------------------------------------------------------------------------------------------" << endl;
+            cout << "--------------------------------------------------------------------------------------------------------" << endl;
+        }
+    }
+}
+void update()
+{
+    string lib;
+    cout << "Enter the 9 digit library id of the student" << endl;
+    cin >> lib;
+    for (int i = 0; i < total; i++)
+    {
+        if (lib == l[i])
+        {
+            cout << "PREVIOUS DATA" << endl;
+            cout << "Name of the student " << i + 1 << " :" << endl;
+            cout << n[i] << endl;
+            cout << "9 digit library id of the student : " << endl;
+            cout << l[i] << endl;
+            cout << "Course of the student : " << endl;
+            cout << c[i] << endl;
+            cout << "Contact no of the student : " << i + 1 << endl;
+            cout << p[i] << endl;
+            cout << "No of books issued by the student : " << i + 1 << endl;
+            cout << b[i] << endl;
+            cout << endl;
+            cout << endl;
+            cout << endl;
+            cout << "ENTER THE NEW DATA" << endl;
+            int d;
+            cout << "Enter the no of books submitted by the student" << endl;
+            cin >> d;
+            b[i] = b[i] - d;
+            cout << "THE RECORD IS UPDATED" << endl;
+            cout << endl;
+            cout << "--------------------------------------------------------------------------------------------------------" << endl;
+            cout << "--------------------------------------------------------------------------------------------------------" << endl;
+        }
+    }
+}
+int main()
+{
+    int HINDI = 1234;
+    int ENGLISH = 1235;
+    int value;
+    while (true)
+    {
+        cout << "Press 1 to enter new details" << endl;
+        cout << endl;
+        cout << "........................................................................................................" << endl;
+        cout << "Press 2 to show all record" << endl;
+        cout << endl;
+        cout << "........................................................................................................" << endl;
+        cout << "Press 3 to search a student" << endl;
+        cout << endl;
+        cout << "........................................................................................................" << endl;
+        cout << "Press 4 to update the record of a student" << endl;
+        cout << endl;
+        cout << "........................................................................................................" << endl;
+        cout << endl;
+        cout << "Press 5 to exit" << endl;
+        cout << endl;
+        cout << "........................................................................................................" << endl;
+        cin >> value;
+        cout << endl;
+        cout << "******************************************************************************************************" << endl;
+        cout << "******************************************************************************************************" << endl;
+        cout << endl;
+        switch (value)
+        {
+        case 1:
+            enter();
+            break;
+
+        case 2:
+            show();
+            break;
+
+        case 3:
+            search();
+            break;
+
+        case 4:
+            update();
+            break;
+
+        case 5:
+            exit(0);
+            break;
+
+        default:
+            cout << "INVALID INPUT !!" << endl;
+        }
+    }
+    return 0;
+}
