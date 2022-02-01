@@ -70,10 +70,10 @@ void enter()
                     cout << "WRONG BARCODE" << endl;
                 }
                 cout << endl;
-                cout << "--------------------------------------------------------------------------------------------------------" << endl;
-                cout << "--------------------------------------------------------------------------------------------------------" << endl;
             }
         }
+        cout << "--------------------------------------------------------------------------------------------------------" << endl;
+        cout << "--------------------------------------------------------------------------------------------------------" << endl;
     }
     else
     {
@@ -85,9 +85,9 @@ void enter()
             cin >> l[i];
             cout << "Enter the course of the student " << endl;
             cin >> c[i];
-            cout << "Enter the contact no of the student " << i + 1 << endl;
+            cout << "Enter the contact no of the student " << endl;
             cin >> p[i];
-            cout << "Enter the no of books issued by the student " << i + 1 << endl;
+            cout << "Enter the no of books issued by the student " << endl;
             cin >> b[i];
             cout << endl;
             int am = b[i];
@@ -102,7 +102,6 @@ void enter()
             cout << endl;
             for (int i = 0; i < am; i++)
             {
-                int barcode;
                 int ab[100];
                 cout << "Enter the barcode of the book " << i + 1 << " from the listed ones" << endl
                      << endl;
@@ -133,11 +132,11 @@ void enter()
                     cout << "WRONG BARCODE" << endl;
                 }
                 cout << endl;
-                cout << "--------------------------------------------------------------------------------------------------------" << endl;
-                cout << "--------------------------------------------------------------------------------------------------------" << endl;
             }
         }
         total = total + m;
+        cout << "--------------------------------------------------------------------------------------------------------" << endl;
+        cout << "--------------------------------------------------------------------------------------------------------" << endl;
     }
 }
 void show()
@@ -150,9 +149,9 @@ void show()
         cout << l[i] << endl;
         cout << "Course of the student : " << endl;
         cout << c[i] << endl;
-        cout << "Contact no of the student : " << i + 1 << endl;
+        cout << "Contact no of the student : " << endl;
         cout << p[i] << endl;
-        cout << "No of books issued by the student : " << i + 1 << endl;
+        cout << "No of books issued by the student : " << endl;
         cout << b[i] << endl;
         cout << endl;
         cout << "--------------------------------------------------------------------------------------------------------" << endl;
@@ -175,9 +174,9 @@ void search()
             cout << l[i] << endl;
             cout << "Course of the student : " << endl;
             cout << c[i] << endl;
-            cout << "Contact no of the student : " << i + 1 << endl;
+            cout << "Contact no of the student : " << endl;
             cout << p[i] << endl;
-            cout << "No of books issued by the student : " << i + 1 << endl;
+            cout << "No of books issued by the student : " << endl;
             cout << b[i] << endl;
             cout << endl;
             cout << "--------------------------------------------------------------------------------------------------------" << endl;
@@ -201,19 +200,136 @@ void update()
             cout << l[i] << endl;
             cout << "Course of the student : " << endl;
             cout << c[i] << endl;
-            cout << "Contact no of the student : " << i + 1 << endl;
+            cout << "Contact no of the student : " << endl;
             cout << p[i] << endl;
-            cout << "No of books issued by the student : " << i + 1 << endl;
+            cout << "No of books issued by the student : " << endl;
             cout << b[i] << endl;
             cout << endl;
             cout << endl;
             cout << endl;
             cout << "ENTER THE NEW DATA" << endl;
             int d;
-            cout << "Enter the no of books submitted by the student" << endl;
+            cout << "Press '1' if the student want to issue more books" << endl;
+            cout << "Press '2' if the student want to submit the books" << endl;
             cin >> d;
-            b[i] = b[i] - d;
-            cout << "THE RECORD IS UPDATED" << endl;
+            switch (d)
+            {
+            case 1:
+                int iss;
+                cout << "Enter how much books does student want to issue" << endl;
+                cin >> iss;
+                cout << "THE BARCODES ARE LISTED HERE" << endl;
+                cout << endl;
+                cout << "HINDI = 301" << endl
+                     << "ENGLISH = 302" << endl
+                     << "SCIENCE = 303" << endl
+                     << "MATH = 304" << endl
+                     << "SST = 305" << endl
+                     << "PHYSICAL EDUCATION = 306" << endl;
+                cout << endl;
+                for (int i = 0; i < iss; i++)
+                {
+                    int ab[100];
+                    cout << "Enter the barcode of the book " << i + 1 << " from the listed ones" << endl
+                         << endl;
+                    cin >> ab[i];
+                    cout << endl;
+                    switch (ab[i])
+                    {
+                    case 301:
+                        cout << "Student issued : HINDI" << endl;
+
+                        break;
+                    case 302:
+                        cout << "Student issued : ENGLISH" << endl;
+
+                        break;
+                    case 303:
+                        cout << "Student issued : SCIENCE" << endl;
+
+                        break;
+                    case 304:
+                        cout << "Student issued : MATH" << endl;
+
+                        break;
+                    case 305:
+                        cout << "Student issued : SST" << endl;
+
+                        break;
+                    case 306:
+                        cout << "Student issued : PHYSICAL EDUCATION" << endl;
+                        break;
+                    default:
+                        cout << "WRONG BARCODE" << endl;
+                        break;
+                    }
+                    cout << endl;
+                }
+                b[i] = b[i] + iss;
+                break;
+
+                cout << endl;
+
+            case 2:
+                int sub;
+                cout << "Enter the no of books submitted by the student" << endl;
+                cin >> sub;
+                cout << "THE BARCODES ARE LISTED HERE" << endl;
+                cout << endl;
+                cout << "HINDI = 301" << endl
+                     << "ENGLISH = 302" << endl
+                     << "SCIENCE = 303" << endl
+                     << "MATH = 304" << endl
+                     << "SST = 305" << endl
+                     << "PHYSICAL EDUCATION = 306" << endl;
+                cout << endl;
+                for (int i = 0; i < sub; i++)
+                {
+                    int ab[100];
+                    cout << "Enter the barcode of the book " << i + 1 << " from the listed ones" << endl
+                         << endl;
+                    cin >> ab[i];
+                    cout << endl;
+                    switch (ab[i])
+                    {
+                    case 301:
+                        cout << "Student issued : HINDI" << endl;
+
+                        break;
+                    case 302:
+                        cout << "Student issued : ENGLISH" << endl;
+
+                        break;
+                    case 303:
+                        cout << "Student issued : SCIENCE" << endl;
+
+                        break;
+                    case 304:
+                        cout << "Student issued : MATH" << endl;
+
+                        break;
+                    case 305:
+                        cout << "Student issued : SST" << endl;
+
+                        break;
+                    case 306:
+                        cout << "Student issued : PHYSICAL EDUCATION" << endl;
+                        break;
+                    default:
+                        cout << "WRONG BARCODE" << endl;
+                        break;
+                    }
+                    cout << endl;
+                }
+                b[i] = b[i] - sub;
+                break;
+
+            default:
+                cout << "INVAILID INPUT" << endl;
+                cout << endl;
+                break;
+            }
+            cout << "THE RECORD IS SUCCESSFULYY UPDATED" << endl;
             cout << endl;
             cout << "--------------------------------------------------------------------------------------------------------" << endl;
             cout << "--------------------------------------------------------------------------------------------------------" << endl;
